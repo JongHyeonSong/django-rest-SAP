@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../images/호수.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-section{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height:80vh;
+}
+
+
+/* 섹션 오른쪽*/
+#task-container{
+    /* height:80vh; */
+    background-color : white;
+    max-width: 600px;
+    max-height: 100%;
+    margin:0 auto;
+
+    /* box-shadow: 3px 3px 3px black; */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+                0 10px 10px rgba(0, 0, 0, 0.22);
+
+    /* margin-top:100px; */
+    /* margin-bottom:100px; */
+
+    justify-content: space-around;
+    align-items: flex-end; /*의미없지않냐 task-container안에 */
+
+    
+}
+
+#form-wrapper{
+    position: -webkit-sticky;
+    position: sticky;
+    /* top: 5rem; */
+    border-bottom: 1px solid #e9e9e9;
+    background-color: #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    padding:30px;
+}
+
+#submit{
+    border:0;
+}
+
+.flex-wrapper{
+    display:flex;
+}
+
+/* 투두리스트 */
+#list-wrapper{
+    background-color: rgb(224, 237, 241);
+}
+
+
+.task-wrapper{
+    margin:5px;
+    padding: 5px;
+    /* cursor: pointer; */
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.title{
+    cursor: pointer;
+}
+
+.create-to-update{
+    background-color: rgb(110, 187, 110);
+}
+
+.create-to-update:hover{
+    background-color: rgb(92, 151, 92);
+}
+
+.span-strike{
+    text-decoration: line-through;
+    font-weight: 500;
+    font-size : 24px;
+}
+

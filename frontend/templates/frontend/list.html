@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="{% static 'frontend/style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <!-- 띵언 -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/qoute.css' %}">
+
+    <!-- 헤더 네비게이션 -->
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+    {% include "frontend/nav.html" %}
+    <section class="main-section">
+        {% include "frontend/qoute.html" %}
+        <div class="container">
+            <div id="task-container">
+                <div id="form-wrapper">
+                    <form action="">
+                        <div class="flex-wrapper">
+                            <div style="flex:1">
+                                <input type="text" name="title" class='form-control'
+                                id="title" placeholder="오늘의 할일">
+                            </div>
+                            <div >
+                            <input type="submit" id="submit" class="btn btn-primary" value="작심삼일" >
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="list-wrapper">
+                
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'js/nav.js'%}"></script>
+    <script src="{% static 'js/qoute.js'%}"></script>
+    <script src="{% static 'js/todo.js' %}"></script>
+</body>
+</html>

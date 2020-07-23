@@ -1,0 +1,73 @@
+<header>
+    <div class="weather">
+        <div class="position">
+            <h1>busan/kr</h1>
+        </div>
+        <div class="temperature">
+            <h1>22</h1>
+            <span>C</span>
+            
+        </div>
+        <div class='icon'>
+            <img src=""  alt="날씨아이콘">
+            <span class="description">cold</span>
+        </div>
+    </div>
+
+
+    <nav class="nav-links">
+        <ul>
+            <li class="nav-link">1</li>
+            <li class="nav-link">2</li>
+            <li class="nav-link">3</li>
+        </ul>
+    </nav>
+
+    <div class="user">
+        iam
+    </div>
+</header>
+
+
+
+<script>
+const API_KEY = `ea0d814f21151e2efab460bb2dd96bf0`;
+
+window.addEventListener('load', ()=>{
+    let lon;
+    let lat;
+    let timezone = document.querySelector('.position h1');
+    let tmpIcon = document.querySelector('.icon img');
+    let tmp = document.querySelector('.temperature h1');
+    let tmpDescription = document.querySelector('.description');
+
+    console.log(tmpDescription)
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition( position =>{
+            lon = position.coords.longitude;
+            lat = position.coords.latitude;
+
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+
+            fetch(api)
+                .then(res => {
+                    return res.json()
+                })
+                .then(data => {
+                    
+                    // console.log(data)
+                    timezone.textContent = data.name+" / "+ data.sys.country;
+                    tmp.textContent = data.main.temp;
+                    tmpDescription.textContent = data.weather[0].description;
+
+                    tmpIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+
+                })
+        })
+    }
+
+})
+
+
+
+</script>
